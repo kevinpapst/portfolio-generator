@@ -1,1 +1,6 @@
-This file was created by JetBrains PhpStorm 6.0.3 for binding GitHub repository
+Portfolio Generator.
+
+This small PHP tool can generate beautiful looking HTML Portfolio pages.
+
+Instead of updating multiple websites, you can now keep all your data in one place
+and generate the pieces you need in the format you want.

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Azuka HTML Template - Instructions</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="instructions.css" type="text/css" media="screen, projection">
+</head>
+
+
+<body>
+	<div id="content">			
+	  <h1>Azuka - Instructions</h1>		
+		<div id="metadata">Chris Creed<br>
+			  <a href="http://www.chris-creed.com/">www.chris-creed.com</a>                    
+	      	  <div id="thankyou">
+	          	<hr/>
+	            <p>Thank you for downloading Azuka. Please read the instructions below for details on how to install and configure the Azuka template.</p>
+	            
+	            
+	            
+	            <hr/>
+	            
+	            
+	          </div>
+	          
+	          <div class="custom-work">
+	            	<p>Would you like me to customise Azuka for you? Or is there some other design/development work you'd like doing? Get in touch with me at <b>contact@chris-creed.com</b> for a FREE QUOTE.</p>
+	            </div><!--end custom-work-->					
+			</div><!-- end metadata -->			
+	
+		<div id="table-of-contents">
+		  <h2>Table of Contents</h2>
+            <ol class="alpha">                
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#the-header-content">The Header Content</a></li>
+                <li><a href="#add-your-own-image">Add Your Own Image</a></li>
+                <li><a href="#main-content">Main Content</a></li>
+                <li><a href="#change-the-colour-scheme">Change The Colour Scheme</a></li>
+            </ol>
+		</div><!-- end table-of-contents -->
+		
+		<hr>
+		
+		<div id="content2">
+    
+    
+  			<h3 id="installation">1. Installation</h3>
+			<p>You will notice that there are several files included in the "azuka.zip" file you downloaded. You need to upload all of these files (except for the "instructions" and the "photoshop" folders) to the root directory of your website (typically something like public_html/) using your FTP client of choice.</p> 
+			<p>Once you have uploaded the files you should be able to view the template online by visiting your site's URL (i.e. http://www.yoursite.com).</p>
+			
+	
+			<h3 id="the-header-content">2. The Header Content</h3>
+			<p>There are a few things that you'll want to update in the header section - initially, you'll want to change the name and job title - to do this you will need to edit lines 28 and 29 in the index.html file:</p>
+			<img src="images/name-subtitle.jpg">			
+			<p>The next thing that you'll want to update is the short bio, email, website, and phone details - you can do this in the index.html file on lines 31-37:</p>
+			<img src="images/bio.jpg">
+			<p>Change the details to your own and then save the file.</p>
+			
+	
+			<h3 id="add-your-own-image">3. Add Your Own Image</h3>
+			<p>To add your own image you'll need a picture of yourself that has dimensions of 200x220px - upload this image to your site's "images" folder. You'll then need to access line 42 of the index.html file:</p>
+			<img src="images/photo.png">
+			<p>Change the "src" attribute to the name of the image file you uploaded - then save your changes.</p>
+			
+	
+			<h3 id="main-content">4. Main Content</h3>
+			<p>Azuka comes with four main sections - Experience, Expertise, Education, and Training - we'll focus on only making changes to the "Experience" section, as the process for changing all of the different sections is the same.</p>
+			<p>Therefore, to change the Experience section, you'll initially need to edit lines 51-67 in your index.html file:</p>
+			<img src="images/experience.png">
+			<p>The text inside the &lt;h4> elements contain the headings of each section. You'll want to change these to correspond with the work experience you want to include in the template. The &lt;p> element underneath is where you put a short overview related to that work experience.</p>
+			<p>After you have made these changes you'll then want to move onto lines 62-64 and repeat the process again. If you'd like to add another section - copy everything from lines 55-59 and paste it under line 65.</p>
+			<p>For the other sections (Expertise, Education, and Training) find the corresponding lines of code and edit them appropriately. Ensure that you save all changes made and upload them to your site.</p>
+			
+			
+			<h3 id="change-the-colour-scheme">5. Change The Colour Scheme</h3>
+			<p>A blue colour is used by default in the Azuka template and you can easily change this by editing the "style.css" file. In particular, you'll need to edit lines 33 and 46.</p>
+			<p>Change the value associated with the "color" attribute on both of these lines to the colour that you would like to be displayed instead.</p>
+			<p>Then save your changes and the template will be updated.</p>
+
+		</div><!--end content2-->
+	
+    </body>
+</html>

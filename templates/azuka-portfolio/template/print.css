@@ -1,0 +1,10 @@
+body { background-color: #fff; }
+#wrap {
+    box-shadow: none;
+    border:none;
+    background: none;
+    padding-top: 0;
+}
+
+#content .cv-section { width: 630px;  }
+#content .cv-section h4.meta { color: #999; }
