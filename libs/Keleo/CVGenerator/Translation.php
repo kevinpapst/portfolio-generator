@@ -5,6 +5,8 @@ namespace Keleo\CVGenerator;
 
 class Translation
 {
+    const ENGLISH = 'en';
+    const GERMAN = 'de';
 
     private $translation = array();
     private $language = null;
@@ -12,11 +14,18 @@ class Translation
     public function __construct($language = null)
     {
         $this->translation = include 'language/en.php';
-        if ($language !== null && $language != 'en') {
-            $this->language = $language;
-            $temp = include 'language/' . $language . '.php';
-            $this->translation = array_merge($this->translation, $temp);
+        $this->language = 'en';
+
+        if ($language !== null && !empty($language) && $language != 'en') {
+            $this->addLanguage($language);
         }
+    }
+
+    public function addLanguage($language)
+    {
+        $this->language = $language;
+        $temp = include 'language/' . $language . '.php';
+        $this->translation = array_merge($this->translation, $temp);
     }
 
     public function get($key)

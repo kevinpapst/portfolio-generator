@@ -16,7 +16,7 @@ class Php extends Base
         $this->copyFiles($this->source, $this->output);
 
         // check if the portfolio has assets to copy
-        if ($this->assets !== null) {
+        if ($this->assets !== null && !empty($this->assets)) {
             $this->copyFiles($this->assets, $this->output);
         }
 
@@ -31,7 +31,7 @@ class Php extends Base
             $vita = $cv;
 
             // "translation" will be available in the template
-            $translation = ($this->translation === null) ? new Translation() : $this->translation;
+            $translation = ($this->translation === null) ? new \Keleo\CVGenerator\Translation() : $this->translation;
 
             // load (and render) template, which will them be avilable in the output buffer
             include $this->source . DIRECTORY_SEPARATOR . $filename;

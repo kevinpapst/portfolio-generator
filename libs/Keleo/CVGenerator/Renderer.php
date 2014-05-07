@@ -42,6 +42,10 @@ class Renderer extends BaseVcObject
 
     public function render(CurriculumVitae $cv)
     {
+        if ($this->translation === null) {
+            $this->setLanguage(Translation::ENGLISH);
+        }
+
         $options = array(
             'language'  => $this->translation->getLanguage(),
             'source'    => $this->source,
