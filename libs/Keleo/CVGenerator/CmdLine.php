@@ -2,29 +2,20 @@
 
 namespace Keleo\CVGenerator;
 
-// no autoloader in place, we use old-style includes ;-)
-include_once __DIR__ . '/BaseVcObject.php';
-include_once __DIR__ . '/Contact.php';
-include_once __DIR__ . '/CurriculumVitae.php';
-include_once __DIR__ . '/Experience.php';
-include_once __DIR__ . '/Knowledge.php';
-include_once __DIR__ . '/Portfolio.php';
-include_once __DIR__ . '/Project.php';
-include_once __DIR__ . '/Renderer.php';
-include_once __DIR__ . '/Website.php';
-include_once __DIR__ . '/Translation.php';
-include_once __DIR__ . '/Education.php';
-include_once __DIR__ . '/Skill.php';
-
 class CmdLine
 {
 
-    const VERSION = '0.1';
+    const VERSION = '0.1.5';
+
+    protected function getBaseDir()
+    {
+        return __DIR__ . '/../../..';
+    }
 
     public function getAllProjects()
     {
         $all = array();
-        foreach(glob(__DIR__ . '/../portfolio/*.php') as $filename) {
+        foreach(glob($this->getBaseDir() . '/portfolio/*.php') as $filename) {
             $all[] = basename($filename);
         }
         return $all;
@@ -35,7 +26,7 @@ class CmdLine
         echo PHP_EOL .
              'Portfolio generator v'.self::VERSION.' ≈ by Kevin Papst' .
              PHP_EOL .
-             '-----------------------------------------' .
+             '-------------------------------------------' .
              PHP_EOL;
     }
 
@@ -52,7 +43,7 @@ class CmdLine
         if (stripos($projectName, '.php') === false) {
             $projectName .= '.php';
         }
-        $projectFile = __DIR__ . '/../portfolio/' . $projectName;
+        $projectFile = $this->getBaseDir() . '/portfolio/' . $projectName;
         if (!empty($projectName) && file_exists($projectFile)  && is_file($projectFile)) {
             return $projectFile;
         }

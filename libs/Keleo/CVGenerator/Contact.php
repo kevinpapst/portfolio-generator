@@ -165,6 +165,25 @@ class Contact extends BaseVcObject
      * @param $type
      * @return Website|null
      */
+    public function getWebsitesByType($types = array())
+    {
+        $all = array();
+
+        foreach($types as $type) {
+            $temp = $this->getWebsiteByType($type);
+            if ($temp !== null) {
+                $all[] = $temp;
+            }
+        }
+
+        return $all;
+    }
+
+
+    /**
+     * @param $type
+     * @return Website|null
+     */
     public function getWebsiteByType($type)
     {
         /* @var $website Website */

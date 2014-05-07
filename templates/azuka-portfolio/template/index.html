@@ -4,6 +4,10 @@ use \Keleo\CVGenerator\Website;
 
 include __DIR__ . '/../../default-include.php';
 
+$socials = $contact->getWebsitesByType(
+    array(Website::HOMEPAGE,Website::BUSINESS,Website::GITHUB,Website::XING,Website::LINKED_IN)
+);
+
 ?><!DOCTYPE html>
 <html lang="en">	
 <head>
@@ -38,14 +42,14 @@ include __DIR__ . '/../../default-include.php';
                 <p><?php echo $vita->getAbout() ?></p>
 
                 <div id="contact-details">
-                    <p class="contact"><span>Email: </span><?php echo $contact->getEmail() ?></p>
-                    <p class="contact"><span>Phone: </span><?php echo $contact->getPhone() ?></p>
+                    <p class="contact"><span><?php echo $translation->get('Email') ?>: </span><?php echo $contact->getEmail() ?></p>
+                    <p class="contact"><span><?php echo $translation->get('Phone') ?>: </span><?php echo $contact->getPhone() ?></p>
                     <?php
-                    if (count($websites) > 0) {
-                        foreach($websites as $website)
+                    if (count($socials) > 0) {
+                        foreach($socials as $website)
                         {
                             ?>
-                            <p class="contact"><span>Website: </span><a href="<?php echo $website->getUrl() ?>" target="_blank"><?php echo ($website->getTitle() != '') ? $website->getTitle() : $website->getUrl() ?></a></p>
+                            <p class="contact"><span><?php echo $translation->get('Website') ?>: </span><a href="<?php echo $website->getUrl() ?>" target="_blank"><?php echo ($website->getTitle() != '') ? $website->getTitle() : $website->getUrl() ?></a></p>
                         <?php
                         }
                     }

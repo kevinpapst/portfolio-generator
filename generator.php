@@ -3,8 +3,17 @@
 // set the current working directory to make sure includes work properly
 chdir(__DIR__);
 
-// no autoloader yet, we use old-style includes ;-)
-include_once 'classes/CmdLine.php';
+
+spl_autoload_register(function($strObjectName) {
+
+    $strObjectFilePath = __DIR__ . '/libs/' . str_replace('\\', DIRECTORY_SEPARATOR, $strObjectName) . '.php';
+    if (file_exists($strObjectFilePath) && is_readable($strObjectFilePath)) {
+        require_once $strObjectFilePath;
+        return true;
+    }
+
+    return null;
+});
 
 // the command line client for the portfolio generator
 $cmdLine = new \Keleo\CVGenerator\CmdLine();

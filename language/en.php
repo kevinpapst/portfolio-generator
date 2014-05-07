@@ -11,6 +11,12 @@ return array(
     'Years'             => 'Years',
     'Go to Top'         => 'Go to Top',
     'Experience Level'  => 'Experience Level',
+    'Business'          => 'Business',
     'Website'           => 'Website',
     'Technologies'      => 'Technologies',
+    'Address'           => 'Address',
+    'Email'             => 'Email',
+    'Phone'             => 'Phone',
+    'Home'              => 'Home',
+    'Email me'          => 'Email me',
 );

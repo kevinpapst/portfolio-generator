@@ -11,6 +11,12 @@ return array(
     'Years'             => 'Jahre',
     'Go to Top'         => 'Nach oben',
     'Experience Level'  => 'Erfahrungslevel',
+    'Business'          => 'Unternehmen',
     'Website'           => 'Webseite',
     'Technologies'      => 'Technologien',
+    'Address'           => 'Adresse',
+    'Email'             => 'Email',
+    'Phone'             => 'Telefon',
+    'Home'              => 'Home',
+    'Email me'          => 'Email senden',
 );

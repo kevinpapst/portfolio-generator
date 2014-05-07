@@ -5,12 +5,14 @@ namespace Keleo\CVGenerator;
 class Website extends BaseVcObject
 {
     const TWITTER       = 'twitter';
-    const GOOGLE_PLUS   = 'gplus';
+    const GOOGLE_PLUS   = 'google-plus';
+    const GITHUB        = 'github';
     const BUSINESS      = 'business';
     const HOMEPAGE      = 'homepage';
     const BLOG          = 'blog';
     const XING          = 'xing';
     const LINKED_IN     = 'linkedin';
+    const ABOUT_ME      = 'aboutme';
     const FACEBOOK      = 'facebook';
 
     private $type = '';

@@ -2,13 +2,20 @@
 
 return array(
     'renderer'  => array(
+        'azuka' => array(
+            'language'  => 'de',
+            'type'      => 'php',
+            'source'    => 'templates/azuka-portfolio/template/',
+            'output'    => 'output/example/azuka-portfolio/',
+            // 'assets'    => '', // a directory that will be copied to each export folder
+        ),
         'pack116blue' => array(
             // 'language'  => 'de', // if you want a different language than english use this key
             'type'      => 'php',
-            'source'    => 'templates/pack116-resume-template/blue/',
-            'output'    => 'output/example/resume-template-blue/',
+            'source'    => 'templates/pack116-resume-template/',
+            'output'    => 'output/example/pack116-resume/',
             // 'assets'    => '', // a directory that will be copied to each export folder
-            'save_as'   => 'index.html'
+            'options'   => array('color' => 'blue') // one of blue,brown,green,purple,red
         )
     ),
     'cv' => array(
@@ -30,6 +37,10 @@ return array(
                     'type'  => 'twitter',
                     'url'   => 'http://www.twitter.com',
                     'title' => 'www.twitter.com'
+                ),
+                array(
+                    'type'  => 'google-plus',
+                    'url'   => 'https://plus.google.com/107501138994192476948'
                 ),
             )
         ),

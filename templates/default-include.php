@@ -11,6 +11,7 @@ use \Keleo\CVGenerator\Website;
 /* @var $skill \Keleo\CVGenerator\Skill */
 /* @var $project \Keleo\CVGenerator\Project */
 
+$options        = $this->options;
 $contact        = $vita->getContact();
 $experiences    = $vita->getExperiences();
 $educations     = $vita->getEducations();
@@ -18,7 +19,7 @@ $knowledges     = $vita->getKnowledges();
 $skills         = $vita->getSkills();
 $projects       = $vita->getProjects();
 $websites       = $contact->getWebsites(
-    array(Website::TWITTER,Website::FACEBOOK,Website::XING,Website::GOOGLE_PLUS,Website::LINKED_IN)
+    //array(Website::TWITTER,Website::FACEBOOK,Website::XING,Website::GOOGLE_PLUS,Website::LINKED_IN)
 );
 
 /* FIXME implement me */
