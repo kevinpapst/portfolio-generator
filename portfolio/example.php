@@ -2,20 +2,32 @@
 
 return array(
     'renderer'  => array(
+        'astral' => array(
+            // [OPTIONAL] Translation for template. English is default (available: de, en). Will be "english" if empty or not set.
+            'language'  => '',
+            // [REQUIRED] Renderer type (available: php)
+            'type'      => 'php',
+            // [REQUIRED] Template base directory (the template that will be used for rendering)
+            'source'    => 'templates/html5up-astral/',
+            // [REQUIRED] Template output directory (the directory where the generated CV will be stored)
+            'output'    => 'output/example/html5up-astral/',
+            // [OPTIONAL] Contents of this directory will be copied to the export folder. Will be ignored if empty or not set.
+            'assets'    => 'portfolio/example/assets/'
+        ),
         'azuka' => array(
             'language'  => 'de',
             'type'      => 'php',
             'source'    => 'templates/azuka-portfolio/template/',
             'output'    => 'output/example/azuka-portfolio/',
-            // 'assets'    => '', // a directory that will be copied to each export folder
+            'assets'    => 'portfolio/example/assets/'
         ),
         'pack116blue' => array(
-            // 'language'  => 'de', // if you want a different language than english use this key
             'type'      => 'php',
             'source'    => 'templates/pack116-resume-template/',
             'output'    => 'output/example/pack116-resume/',
-            // 'assets'    => '', // a directory that will be copied to each export folder
-            'options'   => array('color' => 'blue') // one of blue,brown,green,purple,red
+            'assets'    => 'portfolio/example/assets/',
+            // [OPTIONAL] Color set for "pack116blue". Default: blue (available: blue,brown,green,purple,red)
+            'options'   => array('color' => 'red')
         )
     ),
     'cv' => array(
@@ -26,7 +38,7 @@ return array(
             'email'     => 'johnsmith@business.com',
             'phone'     => '+11 444 555 22 33',
             'address'   => '111 Lorem Street, 34785, Ipsum City',
-            'photo'     => 'images/image.jpg',
+            'photo'     => 'me.png',
             'websites'  => array(
                 array(
                     'type'  => 'homepage',
@@ -72,7 +84,7 @@ return array(
                 'end'       => 'Jun 2005'
             ),
         ),
-        'knowledge'    => array(
+        'knowledge'     => array(
             array(
                 'title'     => 'Webdesign',
                 'teaser'    => 'HTML5 / CSS3 - Flat design & RIA',
@@ -86,28 +98,43 @@ return array(
                 'content'   => 'Ut eget pulvinar lacus. Suspendisse potenti. Integer quis massa sit amet ante rhoncus pharetra. Proin id mi ipsum, a hendrerit nisi. Nam condimentum scelerisque tortor, nec placerat justo scelerisque vitae. Nulla rutrum varius commodo. Sed sit amet eros sit amet est feugiat tincidunt. Quisque est nunc, aliquet ut tincidunt eget, tempus ut dolor. Sed lobortis adipiscing mi, quis ornare sem pulvinar volutpat.'
             ),
         ),
-        'experience'   => array(
+        'experience'    => array(
             array(
                 'title'     => 'Senior Web Designer',
                 'teaser'    => 'Agency Creative, London',
                 'start'      => 'May 2009',
                 'end'        => 'Feb 2010',
-                'content'   => '<ul class="info">
-                      <li>Vestibulum eu ante massa, sed rhoncus velit.</li>
-                      <li>Pellentesque at lectus in <a href="#">libero dapibus</a> cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.</li>
-                    </ul>'
+                'content'   => 'Vestibulum eu ante massa, sed rhoncus velit. Pellentesque at lectus in <a href="#">libero dapibus</a> cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.'
             ),
             array(
                 'title'     => 'Junior Web Designer',
                 'teaser'    => 'Bachelor of Science in Graphic Design',
                 'start'      => 'Jun 2007',
                 'end'        => 'May 2009',
-                'content'   => '<ul class="info">
-                      <li>Sed fermentum sollicitudin interdum. Etiam imperdiet sapien in dolor rhoncus a semper tortor posuere. </li>
-                      <li>Pellentesque at lectus in libero dapibus cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.</li>
-                    </ul>'
+                'content'   => 'Sed fermentum sollicitudin interdum. Etiam imperdiet sapien in dolor rhoncus a semper tortor posuere. Pellentesque at lectus in libero dapibus cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.'
+            ),
+        ),
+        'project'       => array(
+            array(
+                'title' => 'Client website',
+                'duration' => '4 Month',
+                'start' => '2013',
+                'end' => '2014',
+                'position' => 'Designer, Webdeveloper',
+                'description' => 'Something great achieved in here, this project was just fantastic. Sed fermentum sollicitudin interdum. Etiam imperdiet sapien in dolor rhoncus a semper tortor posuere.',
+                'technology' => 'Wordpress, PHP, MySQL',
+                'client' => 'ACME University'
+            ),
+            array(
+                'title' => 'Logo design',
+                'duration' => '2 Month',
+                'start' => '2012',
+                'end' => '2013',
+                'position' => 'Designer',
+                'description' => 'Sed fermentum sollicitudin interdum. Etiam imperdiet sapien in dolor rhoncus a semper tortor posuere. Pellentesque at lectus in libero dapibus cursus. Sed arcu ipsum, varius at ultricies acuro, tincidunt iaculis diam.',
+                'technology' => 'Adobe Photoshop, SVG, CSS-Fonts',
+                'client' => 'ACME Toon-Town'
             ),
         )
     )
-
 );
