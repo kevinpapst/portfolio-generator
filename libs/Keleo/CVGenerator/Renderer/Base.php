@@ -37,6 +37,10 @@ abstract class Base extends BaseVcObject
 
     public function copyFiles($source, $destination)
     {
+        if (!is_dir($source)) {
+            return;
+        }
+
         foreach (
             $iterator = new \RecursiveIteratorIterator(
                 new \RecursiveDirectoryIterator($source, \RecursiveDirectoryIterator::SKIP_DOTS),

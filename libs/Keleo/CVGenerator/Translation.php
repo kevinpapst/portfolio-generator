@@ -36,6 +36,11 @@ class Translation
         return $this->translation[$key];
     }
 
+    public function __isset($key)
+    {
+        return isset($this->translation[$key]);
+    }
+
     public function __get($key)
     {
         return $this->get($key);
@@ -45,4 +50,10 @@ class Translation
     {
         return $this->language;
     }
+
+    public function toArray()
+    {
+        return $this->translation;
+    }
+
 }

@@ -24,6 +24,10 @@ class Project extends BaseVcObject
      * @var string
      */
     private $technology = '';
+    /**
+     * @var Reference
+     */
+    private $reference = null;
 
     /**
      * @param string $description
@@ -105,6 +109,31 @@ class Project extends BaseVcObject
         return $this->title;
     }
 
+    /**
+     * @param \Keleo\CVGenerator\Reference $reference
+     */
+    public function setReference($reference)
+    {
+        if (is_array($reference)) {
+            $ref = new Reference();
+            $ref->setTitle($reference['title']);
+            $ref->setUrl($reference['url']);
+            $this->reference = $ref;
+            return;
+        }
 
+        $this->reference = $reference;
+    }
+
+    /**
+     * @return \Keleo\CVGenerator\Reference
+     */
+    public function getReference($noneEmpty = false)
+    {
+        if ($noneEmpty && $this->reference === null) {
+            return new Reference();
+        }
+        return $this->reference;
+    }
 
 }

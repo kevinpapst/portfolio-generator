@@ -19,4 +19,6 @@ return array(
     'Phone'             => 'Telefon',
     'Home'              => 'Home',
     'Email me'          => 'Email senden',
+    'Contact details'   => 'Kontaktdaten',
+    'Reference'         => 'Referenz'
 );

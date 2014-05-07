@@ -3,6 +3,7 @@
 namespace Keleo\CVGenerator;
 
 use Keleo\CVGenerator\Renderer\Php;
+use Keleo\CVGenerator\Renderer\TBS;
 
 class Renderer extends BaseVcObject
 {
@@ -59,10 +60,12 @@ class Renderer extends BaseVcObject
             case self::PHP:
                 $renderer = new Php($options);
                 break;
+            case self::ODT:
+                $renderer = new TBS($options);
+                break;
             case self::HTML:
             case self::PDF:
             case self::WORD:
-            case self::ODT:
             default:
                 throw new \Exception('Renderer "' . $this->type . '" is not supported yet');
                 break;
