@@ -30,7 +30,7 @@ class Skill extends BaseVcObject
     }
 
     /**
-     * @param array $entries
+     * @param array(String) $entries
      */
     public function setEntries($entries)
     {
@@ -45,4 +45,21 @@ class Skill extends BaseVcObject
         return $this->entries;
     }
 
+    public function __isset($key)
+    {
+        // this nasty workaround is required as tinyButStrong cannot work with getEntries() in a subblock
+        if ($key == 'entries') {
+            return true;
+        }
+        return false;
+    }
+
+    public function __get($key)
+    {
+        // this nasty workaround is required as tinyButStrong cannot work with getEntries() in a subblock
+        if ($key == 'entries') {
+            return $this->entries;
+        }
+        return null;
+    }
 }

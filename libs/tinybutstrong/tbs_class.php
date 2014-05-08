@@ -2775,7 +2775,7 @@ function meth_Merge_SectionNormal(&$BDef,&$Src) {
 				// $col_opt cannot be used here because values which are not array nore object are reformated by $Src into an array with keys 'key' and 'val'
 				$data = &$Src->CurrRec;
 			} elseif (is_object($Src->CurrRec)) {
-				$data = &$Src->CurrRec->$col;
+				$data = $Src->CurrRec->$col;
 			} else {
 				if (array_key_exists($col, $Src->CurrRec)) {
 					$data = &$Src->CurrRec[$col];
