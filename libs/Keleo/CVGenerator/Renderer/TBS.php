@@ -45,8 +45,6 @@ class TBS extends Base
         $tbs->MergeBlock('projects', $cv->getProjects());
         $tbs->MergeBlock('skills', $cv->getSkills());
 
-   //     $tbs->PlugIn(OPENTBS_DEBUG_XML_CURRENT);
-
         // save the generated cv
         $this->saveTemplate($tbs);
     }
@@ -54,7 +52,6 @@ class TBS extends Base
     protected function saveTemplate(\clsTinyButStrong $tbs)
     {
         $tbs->Show(OPENTBS_FILE, $this->output);
-        //$tbs->Show(OPENTBS_DOWNLOAD, $this->output);
     }
 
 }

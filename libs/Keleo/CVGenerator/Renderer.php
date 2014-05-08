@@ -4,6 +4,7 @@ namespace Keleo\CVGenerator;
 
 use Keleo\CVGenerator\Renderer\Php;
 use Keleo\CVGenerator\Renderer\TBS;
+use Keleo\CVGenerator\Renderer\TBSHttp;
 
 class Renderer extends BaseVcObject
 {
@@ -12,6 +13,7 @@ class Renderer extends BaseVcObject
     const PDF = 'pdf';
     const WORD = 'word';
     const ODT = 'odt';
+    const ODT_HTTP = 'odt-http';
 
     /**
      * @var Translation
@@ -62,6 +64,9 @@ class Renderer extends BaseVcObject
                 break;
             case self::ODT:
                 $renderer = new TBS($options);
+                break;
+            case self::ODT_HTTP:
+                $renderer = new TBSHttp($options);
                 break;
             case self::HTML:
             case self::PDF:

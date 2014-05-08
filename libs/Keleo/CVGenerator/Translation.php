@@ -13,7 +13,7 @@ class Translation
 
     public function __construct($language = null)
     {
-        $this->translation = include 'language/en.php';
+        $this->translation = include CV_BASE . '/language/en.php';
         $this->language = 'en';
 
         if ($language !== null && !empty($language) && $language != 'en') {
@@ -24,7 +24,7 @@ class Translation
     public function addLanguage($language)
     {
         $this->language = $language;
-        $temp = include 'language/' . $language . '.php';
+        $temp = include CV_BASE . '/language/' . $language . '.php';
         $this->translation = array_merge($this->translation, $temp);
     }
 
