@@ -15,8 +15,17 @@ class Website extends BaseVcObject
     const ABOUT_ME      = 'aboutme';
     const FACEBOOK      = 'facebook';
 
+    /**
+     * @var string
+     */
     private $type = '';
+    /**
+     * @var string
+     */
     private $title = '';
+    /**
+     * @var string
+     */
     private $url = '';
 
     public function isType($type)

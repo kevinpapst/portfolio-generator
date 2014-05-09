@@ -9,6 +9,7 @@ return array(
     'Projects'          => 'Projekte',
     'Works'             => 'Referenzen',
     'Years'             => 'Jahre',
+    'Month'             => 'Monate',
     'Go to Top'         => 'Nach oben',
     'Experience Level'  => 'Erfahrungslevel',
     'Business'          => 'Unternehmen',

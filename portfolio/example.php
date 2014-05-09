@@ -14,6 +14,15 @@ return array(
             // [OPTIONAL] Contents of this directory will be copied to the export folder. Will be ignored if empty or not set.
             'assets'    => 'portfolio/example/assets/'
         ),
+        'odt' => array(
+            'language'  => 'en',
+            'type'      => 'odt',
+            'source'    => 'templates/openoffice.odt',
+            'output'    => 'output/example/example.odt',
+            'assets'    => 'portfolio/example/assets/',
+            // [OPTIONAL] additional options for tinyButStrong, see http://www.tinybutstrong.com/manual.php#php_setoption
+            'options'   => array('charset' => 'UTF-8')
+        ),
         'azuka' => array(
             'language'  => 'de',
             'type'      => 'php',
@@ -37,22 +46,24 @@ return array(
             'teaser'    => 'Interactive Designer',
             'email'     => 'johnsmith@business.com',
             'phone'     => '+11 444 555 22 33',
-            'address'   => '111 Lorem Street, 34785, Ipsum City',
+            'street'    => '111 Lorem Street',
+            'city'      => '34785, Ipsum City',
             'photo'     => 'me.png',
             'websites'  => array(
                 array(
                     'type'  => 'homepage',
-                    'url'   => 'http://www.businessweb.com',
+                    'url'   => 'http://www.example.com',
                     'title' => 'www.businessweb.com'
                 ),
                 array(
                     'type'  => 'twitter',
                     'url'   => 'http://www.twitter.com',
-                    'title' => 'www.twitter.com'
+                    'title' => 'Twitter'
                 ),
                 array(
                     'type'  => 'google-plus',
-                    'url'   => 'https://plus.google.com/107501138994192476948'
+                    'url'   => 'https://plus.google.com/107501138994192476948',
+                    'title' => 'Google+'
                 ),
             )
         ),
@@ -88,13 +99,13 @@ return array(
             array(
                 'title'     => 'Webdesign',
                 'teaser'    => 'HTML5 / CSS3 - Flat design & RIA',
-                'duration'  => (date('Y') - 2003),
+                'duration'  => (date('Y') - 2003), // duration in knowledge is always assumed to be years
                 'content'   => 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc sed sem vel eros dictum auctor sed et leo. Aliquam eget est dui, sit amet tempus nisl. Nam euismod dignissim ante, et laoreet odio molestie non. Cras eget lectus mauris, a porta urna. Nunc vehicula mi eu nibh ultricies et ullamcorper justo convallis. Nullam eu commodo lorem. Donec ultrices felis sit amet dolor blandit et bibendum augue ullamcorper.'
             ),
             array(
                 'title'     => 'Video editing',
                 'teaser'    => '3D animation and visual effects',
-                'duration'  => (date('Y') - 2009),
+                'duration'  => (date('Y') - 2009), // duration in knowledge is always assumed to be years
                 'content'   => 'Ut eget pulvinar lacus. Suspendisse potenti. Integer quis massa sit amet ante rhoncus pharetra. Proin id mi ipsum, a hendrerit nisi. Nam condimentum scelerisque tortor, nec placerat justo scelerisque vitae. Nulla rutrum varius commodo. Sed sit amet eros sit amet est feugiat tincidunt. Quisque est nunc, aliquet ut tincidunt eget, tempus ut dolor. Sed lobortis adipiscing mi, quis ornare sem pulvinar volutpat.'
             ),
         ),
@@ -117,13 +128,17 @@ return array(
         'project'       => array(
             array(
                 'title' => 'Client website',
-                'duration' => '4 Month',
+                'duration' => '4 Month', // duration here is a free text field, as it can be either weeks, months or even years
                 'start' => '2013',
                 'end' => '2014',
                 'position' => 'Designer, Webdeveloper',
                 'description' => 'Something great achieved in here, this project was just fantastic. Sed fermentum sollicitudin interdum. Etiam imperdiet sapien in dolor rhoncus a semper tortor posuere.',
                 'technology' => 'Wordpress, PHP, MySQL',
-                'client' => 'ACME University'
+                'client' => 'ACME University',
+                'reference' => array(
+                    'url' => 'http://www.example.com',
+                    'title' => 'My great client',
+                )
             ),
             array(
                 'title' => 'Logo design',

@@ -15,7 +15,11 @@ class Contact extends BaseVcObject
     /**
      * @var string
      */
-    private $address = '';
+    private $street = '';
+    /**
+     * @var string
+     */
+    private $city = '';
     /**
      * @var string
      */
@@ -53,11 +57,35 @@ class Contact extends BaseVcObject
     }
 
     /**
-     * @param string $address
+     * @param string $city
      */
-    public function setAddress($address)
+    public function setCity($city)
     {
-        $this->address = $address;
+        $this->city = $city;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param string $street
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStreet()
+    {
+        return $this->street;
     }
 
     /**
@@ -65,7 +93,7 @@ class Contact extends BaseVcObject
      */
     public function getAddress()
     {
-        return $this->address;
+        return $this->street . ', ' . $this->city;
     }
 
     /**

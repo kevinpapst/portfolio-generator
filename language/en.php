@@ -9,6 +9,7 @@ return array(
     'Projects'          => 'Projects',
     'Works'             => 'Works',
     'Years'             => 'Years',
+    'Month'             => 'Month',
     'Go to Top'         => 'Go to Top',
     'Experience Level'  => 'Experience Level',
     'Business'          => 'Business',
